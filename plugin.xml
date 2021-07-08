@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-BeatOnePlugin"
+        version="3.2.0">
+
+  <name>BeatOnePlugin</name>
+
+  <description>
+    This plugin allows you switch the BeatOnePlugin / Torch of your device on or off.
+  </description>
+
+  <author>Eddy Verbruggen - @EddyVerbruggen</author>
+
+  <license>MIT</license>
+
+  <keywords>Torch, BeatOnePlugin, Flash, Light</keywords>
+
+  <repo>https://github.com/EddyVerbruggen/BeatOnePlugin-PhoneGap-Plugin.git</repo>
+
+  <issue>https://github.com/EddyVerbruggen/BeatOnePlugin-PhoneGap-Plugin/issues</issue>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/BeatonePlugin.js" name="BeatOnePlugin">
+    <clobbers target="window.plugins.BeatOnePlugin" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="BeatOnePlugin">
+        <param name="ios-package" value="BeatOnePlugin"/>
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/BeatOnePlugin.h"/>
+    <source-file src="src/ios/BeatOnePlugin.m"/>
+  </platform>
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="BeatOnePlugin">
+        <param name="android-package" value="nl.xservices.plugins.BeatOnePlugin" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.CAMERA"/>
+    </config-file>
+
+    <source-file src="src/android/nl/xservices/plugins/BeatOnePlugin.java" target-dir="src/nl/xservices/plugins"/>
+
+    <dependency id="cordova-plugin-compat" version="^1.0.0" />
+  </platform>
+
+  <!-- wp8 -->
+  <platform name="wp8">
+    <config-file target="config.xml" parent="/*">
+      <feature name="BeatOnePlugin">
+        <param name="wp-package" value="BeatOnePlugin"/>
+      </feature>
+    </config-file>
+
+    <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+      <Capability Name="ID_CAP_ISV_CAMERA"/>
+      <Capability Name="ID_CAP_MICROPHONE"/>
+    </config-file>
+
+    <source-file src="src/wp8/BeatOnePlugin.cs" />
+  </platform>
+
+</plugin>
