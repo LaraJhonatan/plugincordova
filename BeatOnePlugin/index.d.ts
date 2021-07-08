@@ -33,6 +33,11 @@ export declare class BeatonePlugin extends IonicNativePlugin {
      * Checks if the BeatOnePlugin is available
      * @returns {Promise<any>} Returns a promise that resolves with a boolean stating if the BeatOnePlugin is available.
      */
+    createInstance(): Promise<any>;
+    /**
+     * Checks if the BeatOnePlugin is available
+     * @returns {Promise<any>} Returns a promise that resolves with a boolean stating if the BeatOnePlugin is available.
+     */
     connecTensiometer(): Promise<any>;
     /**
       * Checks if the BeatOnePlugin is available

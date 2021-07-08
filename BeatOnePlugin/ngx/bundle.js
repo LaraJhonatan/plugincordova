@@ -13,6 +13,7 @@ var BeatonePlugin = /** @class */ (function (_super) {
     }
     BeatonePlugin.prototype.connectBeatOne = function (uuid) { return core.cordova(this, "connectBeatOne", {}, arguments); };
     BeatonePlugin.prototype.getSteps = function () { return core.cordova(this, "getSteps", {}, arguments); };
+    BeatonePlugin.prototype.createInstance = function () { return core.cordova(this, "createInstance", {}, arguments); };
     BeatonePlugin.prototype.connecTensiometer = function () { return core.cordova(this, "connecTensiometer", {}, arguments); };
     BeatonePlugin.prototype.startMeasurement = function () { return core.cordova(this, "startMeasurement", {}, arguments); };
     BeatonePlugin.prototype.getHeart = function () { return core.cordova(this, "getHeart", {}, arguments); };
